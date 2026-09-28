@@ -1,0 +1,28 @@
+# macOS System
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Xcode & SwiftPM
+.build/
+Packages/
+Package.resolved
+xcuserdata/
+*.xcodeproj
+*.xcworkspace
+*.playground
+
+# Standart derlenmiş çıktılar
+MacAssistiveTouch.app
+*.zip
+*.dmg
+AppIcon.iconset/
+
+# Geçici dosyalar
+*.swp
+*~
+.agent/
+scratch/
+tasks.md
