@@ -57,4 +57,8 @@ cat << 'EOF' > "$CONTENTS_DIR/Info.plist"
 </plist>
 EOF
 
+# Bundle'ı ad-hoc imzala (Info.plist ve kaynakları mühürle)
+echo "🔏 Signing $APP_DIR..."
+codesign --force --deep --sign - "$APP_DIR"
+
 echo "✅ Successfully created $APP_DIR"
