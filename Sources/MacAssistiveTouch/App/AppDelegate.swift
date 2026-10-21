@@ -34,15 +34,49 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Mac Assistive Touch", action: nil, keyEquivalent: ""))
-        menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Menüyü Aç / Kapat (Toggle Hub)", action: #selector(toggleHub), keyEquivalent: "h"))
-        menu.addItem(NSMenuItem(title: "Ayarlar... (Settings...)", action: #selector(openSettings), keyEquivalent: ","))
-        menu.addItem(NSMenuItem(title: "Konumu Sıfırla (Reset Position)", action: #selector(resetOrbPosition), keyEquivalent: "r"))
-        menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Çıkış (Quit)", action: #selector(quitApp), keyEquivalent: "q"))
-
+        menu.delegate = self
         statusItem?.menu = menu
+        rebuildStatusMenu(menu)
+    }
+
+    private func rebuildStatusMenu(_ menu: NSMenu) {
+        menu.removeAllItems()
+
+        let titleItem = NSMenuItem(title: "Mac Assistive Touch", action: nil, keyEquivalent: "")
+        titleItem.isEnabled = false
+        menu.addItem(titleItem)
+        menu.addItem(NSMenuItem.separator())
+
+        menu.addItem(NSMenuItem(
+            title: LanguageManager.shared.tr("menu_toggle_hub"),
+            action: #selector(toggleHub),
+            keyEquivalent: "h"
+        ))
+
+        let settingsItem = NSMenuItem(
+            title: LanguageManager.shared.tr("menu_settings"),
+            action: #selector(openSettings),
+            keyEquivalent: ","
+        )
+        if let settingsImg = NSImage(systemSymbolName: "gearshape", accessibilityDescription: nil) {
+            settingsImg.isTemplate = true
+            settingsItem.image = settingsImg
+        }
+        menu.addItem(settingsItem)
+
+        menu.addItem(NSMenuItem(
+            title: LanguageManager.shared.tr("menu_reset_position"),
+            action: #selector(resetOrbPosition),
+            keyEquivalent: "r"
+        ))
+
+        menu.addItem(NSMenuItem.separator())
+
+        menu.addItem(NSMenuItem(
+            title: LanguageManager.shared.tr("menu_quit"),
+            action: #selector(quitApp),
+            keyEquivalent: "q"
+        ))
     }
 
     private func setupOrbAndHubPanels() {
@@ -100,5 +134,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc private func quitApp() {
         NSApplication.shared.terminate(nil)
+    }
+}
+
+// MARK: - Menü Çubuğu Dinamik Dil Güncellemesi
+extension AppDelegate: NSMenuDelegate {
+    func menuNeedsUpdate(_ menu: NSMenu) {
+        rebuildStatusMenu(menu)
     }
 }

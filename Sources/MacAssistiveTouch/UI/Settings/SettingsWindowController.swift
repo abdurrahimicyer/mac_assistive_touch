@@ -19,17 +19,17 @@ public final class SettingsWindowController: NSObject, NSWindowDelegate {
         }
 
         let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 920, height: 560),
+            contentRect: NSRect(x: 0, y: 0, width: 1200, height: 680),
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
             backing: .buffered,
             defer: false
         )
 
-        window.title = "Mac Assistive Touch Ayarları"
+        window.title = "Mac Assistive Touch Studio"
         window.titleVisibility = .hidden
         window.titlebarAppearsTransparent = true
-        window.isMovableByWindowBackground = true
-        window.minSize = NSSize(width: 860, height: 500)
+        window.isMovableByWindowBackground = false
+        window.minSize = NSSize(width: 1040, height: 640)
         window.center()
         window.setFrameAutosaveName("MacAssistiveTouchSettingsWindow")
         window.isReleasedWhenClosed = false

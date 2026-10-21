@@ -103,13 +103,22 @@ public final class LanguageManager: ObservableObject {
         "launch_at_login": ("Bilgisayar Açılışında Otomatik Başlat", "Launch at System Login"),
         "launch_at_login_desc": ("macOS başladığında Mac Assistive Touch arka planda hazır beklesin.", "Run Mac Assistive Touch automatically on system boot."),
 
+        // Status Bar / Menü Çubuğu
+        "menu_toggle_hub": ("Menüyü Aç / Kapat", "Toggle Hub"),
+        "menu_settings": ("Ayarlar...", "Settings..."),
+        "menu_reset_position": ("Konumu Sıfırla", "Reset Position"),
+        "menu_quit": ("Çıkış", "Quit"),
+
         // Kategori Yönetimi
         "categories_header": ("Kategoriler", "Categories"),
         "category_name": ("Kategori Adı", "Category Name"),
         "add_web_link": ("Web Linki", "Web Link"),
         "add_app": ("Uygulama Ekle", "Add App"),
+        "delete_category": ("Kategoriyi Sil", "Delete Category"),
+        "add_new_category": ("Yeni Kategori Ekle...", "Add New Category..."),
         "select_category_prompt": ("Bir kategori seçin veya yeni ekleyin.", "Select a category or add a new one."),
-        "empty_category": ("Bu grupta henüz uygulama yok.", "No applications in this group yet."),
+        "empty_category": ("Bu kategoride henüz uygulama yok", "No applications in this category yet"),
+        "empty_category_sub": ("Aşağıdaki 'Uygulama Ekle' butonundan Mac'inizdeki uygulamaları ekleyebilirsiniz.", "You can add apps installed on your Mac using the 'Add App' button below."),
         "drag_drop_apps": ("Uygulamaları buraya sürükleyip bırakabilir veya '+ Uygulama Ekle' butonuna basabilirsiniz.", "Drag & drop applications here or click '+ Add App'."),
         "new_group_default": ("Yeni Grup", "New Group"),
         "new_category_title": ("Yeni Kategori Oluştur", "Create New Category"),
@@ -119,6 +128,51 @@ public final class LanguageManager: ObservableObject {
         "add_weblink_title": ("Web Bağlantısı Ekle", "Add Web Link"),
         "title_placeholder": ("Başlık (örn. GitHub, ChatGPT)", "Title (e.g. GitHub, ChatGPT)"),
         "url_placeholder": ("URL (örn. https://github.com)", "URL (e.g. https://github.com)"),
+        "btn_add_app": ("Uygulama Ekle (/Applications)", "Add App (/Applications)"),
+        "live_idle_opacity_prefix": ("Yüzen Buton (Canlı Rölanti Opaklığı:", "Floating Button (Live Idle Opacity:"),
+        "seconds_format": ("%.1f sn", "%.1f s"),
+
+        // Studio Sekmeleri
+        "tab_orb": ("Buton", "Button"),
+        "tab_preferences": ("Tercihler", "Preferences"),
+        "tab_about_short": ("Hakkında", "About"),
+
+        // Studio Üst & Canlı Sahne
+        "theme_light_short": ("Açık", "Light"),
+        "theme_dark_short": ("Koyu", "Dark"),
+
+        // Buton Müfettiş Başlıkları & Satırları
+        "header_orb_appearance": ("YÜZEN BUTON GÖRÜNÜMÜ", "FLOATING BUTTON APPEARANCE"),
+        "header_behavior_smart_edge": ("DAVRANIŞ & AKILLI KENAR", "BEHAVIOR & SMART EDGE"),
+        "magnetic_snap": ("Manyetik Kenara Yapış", "Magnetic Edge Snap"),
+        "magnetic_snap_desc": ("Bırakıldığında ekran kenarına yaylanır", "Snaps to screen edge when released"),
+        "auto_hide_peek": ("Kenarda Otomatik Gizlen (Peek)", "Edge Auto-Hide (Peek)"),
+        "auto_hide_peek_desc": ("Ekran kenarında dururken yarıya iner", "Hides halfway when docked to screen edge"),
+        "header_gestures_shortcuts": ("HAREKETLER & KISAYOLLAR", "GESTURES & SHORTCUTS"),
+        "gesture_single_click_short": ("Tek Tık", "Single Click"),
+        "gesture_single_click_desc_short": ("Menüyü Aç / Kapat", "Toggle Menu"),
+        "gesture_double_click": ("Çift Tık", "Double Click"),
+        "gesture_double_click_desc": ("Ekran Görüntüsü Al", "Take Screenshot"),
+        "gesture_long_press": ("Uzun Basış", "Long Press"),
+        "gesture_long_press_desc": ("Ekranı Kilitle", "Lock Screen"),
+        "gesture_drag_short": ("Sürükle", "Drag"),
+        "gesture_drag_desc_short": ("Ekranda Serbest Taşı", "Move Freely on Screen"),
+        "gesture_shortcut": ("Kısayol", "Shortcut"),
+
+        // Tercihler Sekmesi
+        "theme_section_caps": ("GÖRSEL TEMA", "VISUAL THEME"),
+        "theme_light_btn": ("Açık Mod", "Light Mode"),
+        "theme_dark_btn": ("Koyu Mod", "Dark Mode"),
+        "app_language_caps": ("UYGULAMA DİLİ", "APPLICATION LANGUAGE"),
+        "system_personalization_caps": ("SİSTEM & KİŞİSELLEŞTİRME", "SYSTEM & PERSONALIZATION"),
+        "launch_at_login_sub": ("Mac açıldığında arka planda çalışır", "Runs in background when Mac starts up"),
+
+        // Hakkında Sekmesi
+        "project_developer_caps": ("PROJE & GELİŞTİRİCİ", "PROJECT & DEVELOPER"),
+        "developer_role": ("Geliştirici • Gratonya", "Developer • Gratonya"),
+        "github_repo": ("GitHub Deposu", "GitHub Repository"),
+        "license_title": ("Lisans", "License"),
+        "mit_license": ("MIT License (Açık Kaynak)", "MIT License (Open Source)"),
 
         // Jestler & Kısayollar
         "gestures_touch_title": ("Fare & Dokunma Jestleri", "Mouse & Touch Gestures"),

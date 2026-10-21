@@ -146,4 +146,19 @@ public final class CategoryManagementViewModel: ObservableObject {
         groups[groupIndex].items.move(fromOffsets: fromOffsets, toOffset: toOffset)
         save()
     }
+
+    public func moveItem(sourceId: UUID, destinationId: UUID) {
+        guard let currentGroupId = selectedGroupId,
+              let groupIndex = groups.firstIndex(where: { $0.id == currentGroupId }) else {
+            return
+        }
+        guard let fromIndex = groups[groupIndex].items.firstIndex(where: { $0.id == sourceId }),
+              let toIndex = groups[groupIndex].items.firstIndex(where: { $0.id == destinationId }),
+              fromIndex != toIndex else {
+            return
+        }
+        let item = groups[groupIndex].items.remove(at: fromIndex)
+        groups[groupIndex].items.insert(item, at: toIndex)
+        save()
+    }
 }
