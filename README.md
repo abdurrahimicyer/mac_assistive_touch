@@ -20,12 +20,12 @@
 
 ## Overview & Motivation
 
-While iOS users have long benefited from the convenience of AssistiveTouch for one-handed navigation, quick access, and workflow shortcuts, macOS has traditionally lacked an equivalent floating desktop companion. Traditional application launchers often demand full keyboard focus or remain hidden away in the Dock and Menu Bar.
+As daily workflows expand and professional tools accumulate, the macOS Dock quickly becomes overcrowded, cluttered, and difficult to manage. Because macOS provides no native way to categorize, group, or organize apps directly within the Dock, users are often left with an overflowing icon strip or forced to navigate through Launchpad and Spotlight for routine tasks.
 
-**Mac Assistive Touch** was created to address this need with a lightweight, non-intrusive solution:
-- **Always Accessible:** A subtle, customizable floating orb stays within reach across all desktops and fullscreen spaces without stealing active window focus.
-- **Unified Productivity Hub:** Quick access to categorized applications, web bookmarks, system shortcuts, and real-time hardware telemetry in a single click or keystroke.
-- **Native Experience:** Designed adhering strictly to Apple Human Interface Guidelines, utilizing native materials, fluid physics, and system-level integration.
+**Mac Assistive Touch** was created to solve this limitation and bring organized efficiency back to macOS:
+- **Unlimited Categorized Apps:** Group and organize as many applications and web links as you need into custom workflows (such as Development, Productivity, Utilities, and Design), overcoming the physical constraints of the Dock.
+- **A Cleaner, Distraction-Free Desktop:** Free your macOS Dock from endless icons while keeping all your mission-critical tools instantly accessible inside an elegant, floating glass companion.
+- **Always Accessible, Never in the Way:** A subtle floating orb that rests along your screen edge with intelligent auto-docking (**Hide & Peek**), ready to open with a single click or keyboard shortcut without stealing active window focus.
 
 ---
 
