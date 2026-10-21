@@ -198,7 +198,7 @@ public final class LanguageManager: ObservableObject {
         "about_devs_header": ("Geliştirici Ekip & Mimari", "Developer Team & Architecture"),
         "about_contact_header": ("Resmi İletişim & Web", "Official Contact & Web"),
         "about_tech_header": ("Kullanılan Teknolojiler & Altyapı", "Technologies Used & Architecture"),
-        "about_version": ("Sürüm 1.0.0", "Version 1.0.0"),
+        "about_version": ("Sürüm 1.1.0", "Version 1.1.0"),
         "about_os": ("macOS 14+ Sonoma & Sequoia", "macOS 14+ Sonoma & Sequoia"),
         "about_copyright": ("Copyright © 2026 Abdurrahim İçyer • Gratonya. Tüm hakları saklıdır.", "Copyright © 2026 Abdurrahim İçyer • Gratonya. All rights reserved."),
 

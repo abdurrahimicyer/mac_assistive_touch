@@ -73,7 +73,7 @@ Mac Assistive Touch is engineered from the ground up with pure native macOS fram
 ## Download & Installation
 
 ### Pre-built Release
-1. Download the latest `MacAssistiveTouch-v1.0.0.zip` from [**Releases**](https://github.com/abdurrahimicyer/mac_assistive_touch/releases).
+1. Download the latest `MacAssistiveTouch-v1.1.0.zip` from [**Releases**](https://github.com/abdurrahimicyer/mac_assistive_touch/releases).
 2. Unzip and move **MacAssistiveTouch.app** to your `/Applications` directory.
 3. Open the app to start using it.
 

@@ -204,7 +204,7 @@ public struct SettingsView: View {
                     .foregroundStyle(isDark ? .white : .black)
                     .lineLimit(1)
 
-                Text("v1.0 • Abdurrahim İçyer")
+                Text("v1.1 • Abdurrahim İçyer")
                     .font(.system(size: 10, weight: .medium))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
