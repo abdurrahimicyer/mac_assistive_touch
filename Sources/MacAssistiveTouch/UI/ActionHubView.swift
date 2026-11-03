@@ -8,6 +8,7 @@ public struct ActionHubView: View {
     @ObservedObject private var clipboardMgr = ClipboardManager.shared
     @ObservedObject private var userProfile = UserProfileService.shared
     @ObservedObject private var scratchpad = ScratchpadService.shared
+    @ObservedObject private var pomodoro = PomodoroService.shared
     @ObservedObject private var lang = LanguageManager.shared
 
     weak var panel: ActionHubPanel?
@@ -311,6 +312,16 @@ public struct ActionHubView: View {
 
             // Hızlı Sistem Aksiyonları Mini Dock
             HStack(spacing: 8) {
+                systemActionButton(
+                    id: "pomodoro",
+                    icon: pomodoro.phase == .focus ? "flame.fill" : "cup.and.saucer.fill",
+                    title: pomodoro.state == .running ? "Pomodoro: \(pomodoro.formattedTime)" : (lang.currentLanguage == .turkish ? "Pomodoro Sayacı" : "Pomodoro Timer"),
+                    isActive: pomodoro.state == .running
+                ) {
+                    pomodoro.toggle()
+                    SystemActionService.shared.performHapticFeedback()
+                }
+
                 systemActionButton(
                     id: "scratchpad",
                     icon: "square.and.pencil",

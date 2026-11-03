@@ -44,9 +44,9 @@ cat << 'EOF' > "$CONTENTS_DIR/Info.plist"
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.1.0</string>
+    <string>1.2.0</string>
     <key>CFBundleVersion</key>
-    <string>2</string>
+    <string>3</string>
     <key>LSMinimumSystemVersion</key>
     <string>14.0</string>
     <key>LSUIElement</key>
@@ -60,5 +60,26 @@ EOF
 # Bundle'ı ad-hoc imzala (Info.plist ve kaynakları mühürle)
 echo "🔏 Signing $APP_DIR..."
 codesign --force --deep --sign - "$APP_DIR"
-
 echo "✅ Successfully created $APP_DIR"
+
+VERSION="1.2.0"
+
+# DMG oluştur (Drag & Drop /Applications sembolik bağı ile)
+DMG_NAME="MacAssistiveTouch-v${VERSION}.dmg"
+DMG_TMP="dmg_temp_build"
+echo "💿 Creating installer DMG: $DMG_NAME..."
+rm -rf "$DMG_TMP" "$DMG_NAME"
+mkdir -p "$DMG_TMP"
+cp -R "$APP_DIR" "$DMG_TMP/"
+ln -s /Applications "$DMG_TMP/Applications"
+hdiutil create -volname "Mac Assistive Touch" -srcfolder "$DMG_TMP" -ov -format UDZO "$DMG_NAME"
+rm -rf "$DMG_TMP"
+echo "✅ Successfully created $DMG_NAME"
+
+# ZIP oluştur
+ZIP_NAME="MacAssistiveTouch-v${VERSION}.zip"
+echo "🗜️ Creating release ZIP: $ZIP_NAME..."
+rm -f "$ZIP_NAME"
+zip -r -y -q "$ZIP_NAME" "$APP_DIR"
+echo "✅ Successfully created $ZIP_NAME"
+

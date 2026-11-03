@@ -36,10 +36,11 @@ As daily workflows expand and professional tools accumulate, the macOS Dock quic
 - **Spotlight-Style Quick Search:** Search and filter your apps instantly by pressing `⌘F` or typing directly when the hub is open.
 - **System Telemetry:** Real-time monitoring of CPU load, RAM utilization, and battery state with near-zero overhead.
 - **Productivity Utilities:**
+  - **Pomodoro Focus Timer:** Integrated Focus, Short Break, and Long Break countdown tracker right in the Action Hub header with live digital timer feedback and audio chimes.
   - **Quick Scratchpad:** Transient note-taking dock for quick code snippets, ideas, and phone numbers.
   - **Clipboard History:** Fast access to recently copied items for single-click reuse.
   - **Quick Actions:** Single-click screen lock, screenshot capture, audio mute, and trash management.
-- **Settings Studio:** Comprehensive 3-column configuration suite to customize categories, gestures, behavior, and visual themes.
+- **Settings Studio:** Comprehensive 3-column configuration suite to customize categories, gestures, behavior, Pomodoro durations, and visual themes.
 - **Bilingual Interface:** Instant runtime switching between **English** and **Turkish**.
 
 ---
@@ -73,9 +74,8 @@ Mac Assistive Touch is engineered from the ground up with pure native macOS fram
 ## Download & Installation
 
 ### Pre-built Release
-1. Download the latest `MacAssistiveTouch-v1.1.0.zip` from [**Releases**](https://github.com/abdurrahimicyer/mac_assistive_touch/releases).
-2. Unzip and move **MacAssistiveTouch.app** to your `/Applications` directory.
-3. Open the app to start using it.
+- **DMG Installer (Recommended):** Download [**MacAssistiveTouch-v1.2.0.dmg**](https://github.com/abdurrahimicyer/mac_assistive_touch/releases) and drag **Mac Assistive Touch** to your **Applications** folder.
+- **ZIP Package:** Download [**MacAssistiveTouch-v1.2.0.zip**](https://github.com/abdurrahimicyer/mac_assistive_touch/releases), extract, and move `MacAssistiveTouch.app` to your `/Applications` directory.
 
 > **Note on macOS Gatekeeper:**  
 > Since this is an open-source community release, right-click `MacAssistiveTouch.app` and select **Open** on initial launch, or execute:

@@ -7,6 +7,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var orbViewModel: OrbViewModel?
     private var hubPanel: ActionHubPanel?
     private var hubViewModel: ActionHubViewModel?
+    private var dynamicIslandPanel: DynamicIslandPanel?
     private var statusItem: NSStatusItem?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -15,7 +16,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         setupStatusBarItem()
         setupOrbAndHubPanels()
+        setupDynamicIslandPanel()
         setupGlobalHotKey()
+    }
+
+    private func setupDynamicIslandPanel() {
+        self.dynamicIslandPanel = DynamicIslandPanel()
     }
 
     private func setupGlobalHotKey() {

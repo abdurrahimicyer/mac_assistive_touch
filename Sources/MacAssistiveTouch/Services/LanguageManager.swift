@@ -167,6 +167,21 @@ public final class LanguageManager: ObservableObject {
         "system_personalization_caps": ("SİSTEM & KİŞİSELLEŞTİRME", "SYSTEM & PERSONALIZATION"),
         "launch_at_login_sub": ("Mac açıldığında arka planda çalışır", "Runs in background when Mac starts up"),
 
+        // Dinamik Ada & Pomodoro
+        "header_dynamic_island_pomodoro": ("DİNAMİK ADA & POMODORO", "DYNAMIC ISLAND & POMODORO"),
+        "dynamic_island_enable": ("Dinamik Ada'yı Etkinleştir", "Enable Dynamic Island"),
+        "dynamic_island_enable_sub": ("Çentik ve ekran üstünde canlı sayaç adası gösterir", "Shows live countdown island at screen notch/top"),
+        "dynamic_island_autohide": ("Boştayken Otomatik Gizle", "Auto-hide when Idle"),
+        "dynamic_island_autohide_sub": ("Sayaç çalışmıyorken ada gizlenir, fare gelince veya sayaç başlayınca açılır", "Hides island when idle; appears on mouse hover or when timer starts"),
+        "pomodoro_focus_duration": ("Odaklanma Süresi", "Focus Duration"),
+        "pomodoro_break_duration": ("Kısa Mola Süresi", "Short Break Duration"),
+        "pomodoro_sound": ("Bitiş Ses Uyarısı", "Completion Sound Alert"),
+        "pomodoro_sound_sub": ("Faz bittiğinde sesli bildirim çalar", "Plays audio chime when a phase completes"),
+        "minutes_short": ("dk", "min"),
+        "island_collapse": ("Adayı Daralt", "Collapse Island"),
+        "island_pin": ("Adayı Sabitle", "Pin Island"),
+        "island_unpin": ("Sabitlemeyi Kaldır", "Unpin Island"),
+
         // Hakkında Sekmesi
         "project_developer_caps": ("PROJE & GELİŞTİRİCİ", "PROJECT & DEVELOPER"),
         "developer_role": ("Geliştirici • Gratonya", "Developer • Gratonya"),
@@ -198,7 +213,7 @@ public final class LanguageManager: ObservableObject {
         "about_devs_header": ("Geliştirici Ekip & Mimari", "Developer Team & Architecture"),
         "about_contact_header": ("Resmi İletişim & Web", "Official Contact & Web"),
         "about_tech_header": ("Kullanılan Teknolojiler & Altyapı", "Technologies Used & Architecture"),
-        "about_version": ("Sürüm 1.1.0", "Version 1.1.0"),
+        "about_version": ("Sürüm 1.2.0", "Version 1.2.0"),
         "about_os": ("macOS 14+ Sonoma & Sequoia", "macOS 14+ Sonoma & Sequoia"),
         "about_copyright": ("Copyright © 2026 Abdurrahim İçyer • Gratonya. Tüm hakları saklıdır.", "Copyright © 2026 Abdurrahim İçyer • Gratonya. All rights reserved."),
 

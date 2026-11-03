@@ -9,6 +9,7 @@ public struct SettingsView: View {
     @ObservedObject private var lang = LanguageManager.shared
     @ObservedObject private var userProfile = UserProfileService.shared
     @ObservedObject private var launchService = LaunchAtLoginService.shared
+    @ObservedObject private var pomodoro = PomodoroService.shared
 
     // Gerçek Ayarlar (AppStorage & UserDefaults)
     @AppStorage("OrbDimmedOpacity") private var orbDimmedOpacity: Double = 0.35
@@ -725,6 +726,7 @@ public struct SettingsView: View {
                         // SEKME 2: TERCİHLER VE SİSTEM
                         themeSelectorSection
                         languageSelectorSection
+                        dynamicIslandAndPomodoroSection
                         systemLaunchAndProfileSection
                     } else {
                         // SEKME 3: HAKKINDA VE GELİŞTİRİCİ
@@ -1017,6 +1019,120 @@ public struct SettingsView: View {
                 }
             }
             .padding(4)
+            .background(isDark ? Color.white.opacity(0.06) : Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .stroke(isDark ? Color.white.opacity(0.08) : Color.black.opacity(0.06), lineWidth: 1)
+            )
+        }
+    }
+
+    // SECTION: DİNAMİK ADA & POMODORO SAYACI
+    private var dynamicIslandAndPomodoroSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(lang.tr("header_dynamic_island_pomodoro"))
+                .font(.system(size: 10, weight: .bold))
+                .foregroundStyle(.secondary)
+                .tracking(0.5)
+
+            VStack(spacing: 12) {
+                // Odaklanma Süresi
+                VStack(spacing: 6) {
+                    HStack {
+                        Text(lang.tr("pomodoro_focus_duration"))
+                            .font(.system(size: 12, weight: .medium))
+                        Spacer()
+                        Text("\(pomodoro.focusMinutes) " + lang.tr("minutes_short"))
+                            .font(.system(size: 11, weight: .bold, design: .monospaced))
+                            .foregroundStyle(.blue)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 2)
+                            .background(Color.blue.opacity(0.12))
+                            .clipShape(Capsule())
+                    }
+                    Slider(
+                        value: Binding(
+                            get: { Double(pomodoro.focusMinutes) },
+                            set: { pomodoro.focusMinutes = Int($0) }
+                        ),
+                        in: 10...60,
+                        step: 5
+                    )
+                    .accentColor(.blue)
+                }
+
+                Divider().background(isDark ? Color.white.opacity(0.06) : Color.black.opacity(0.04))
+
+                // Mola Süresi
+                VStack(spacing: 6) {
+                    HStack {
+                        Text(lang.tr("pomodoro_break_duration"))
+                            .font(.system(size: 12, weight: .medium))
+                        Spacer()
+                        Text("\(pomodoro.shortBreakMinutes) " + lang.tr("minutes_short"))
+                            .font(.system(size: 11, weight: .bold, design: .monospaced))
+                            .foregroundStyle(.blue)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 2)
+                            .background(Color.blue.opacity(0.12))
+                            .clipShape(Capsule())
+                    }
+                    Slider(
+                        value: Binding(
+                            get: { Double(pomodoro.shortBreakMinutes) },
+                            set: { pomodoro.shortBreakMinutes = Int($0) }
+                        ),
+                        in: 1...15,
+                        step: 1
+                    )
+                    .accentColor(.blue)
+                }
+
+                Divider().background(isDark ? Color.white.opacity(0.06) : Color.black.opacity(0.04))
+
+                // Sesli Bildirim
+                Toggle(isOn: $pomodoro.isSoundEnabled) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(lang.tr("pomodoro_sound"))
+                            .font(.system(size: 12, weight: .medium))
+                        Text(lang.tr("pomodoro_sound_sub"))
+                            .font(.system(size: 10))
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .toggleStyle(SwitchToggleStyle(tint: .blue))
+
+                Divider().background(isDark ? Color.white.opacity(0.06) : Color.black.opacity(0.04))
+
+                // Dinamik Ada Aç/Kapa (Opsiyonel)
+                Toggle(isOn: $pomodoro.isDynamicIslandEnabled) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(lang.tr("dynamic_island_enable"))
+                            .font(.system(size: 12, weight: .medium))
+                        Text(lang.tr("dynamic_island_enable_sub"))
+                            .font(.system(size: 10))
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .toggleStyle(SwitchToggleStyle(tint: .blue))
+
+                if pomodoro.isDynamicIslandEnabled {
+                    // Boştayken Otomatik Gizle
+                    Toggle(isOn: $pomodoro.isDynamicIslandAutoHide) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(lang.tr("dynamic_island_autohide"))
+                                .font(.system(size: 12, weight: .medium))
+                            Text(lang.tr("dynamic_island_autohide_sub"))
+                                .font(.system(size: 10))
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .toggleStyle(SwitchToggleStyle(tint: .blue))
+                    .padding(.top, 4)
+                }
+            }
+            .padding(12)
             .background(isDark ? Color.white.opacity(0.06) : Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
             .overlay(
