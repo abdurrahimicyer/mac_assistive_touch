@@ -18,6 +18,7 @@ xcuserdata/
 MacAssistiveTouch.app
 *.zip
 *.dmg
+!MacAssistiveTouch-*.dmg
 AppIcon.iconset/
 
 # Geçici dosyalar
